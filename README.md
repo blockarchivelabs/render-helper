@@ -1,6 +1,6 @@
 # Render Helper
 
-Ecency markdown+html render helper
+Upvy markdown+html render helper
 
 - custom markdown to html
 - custom markdown to amp
