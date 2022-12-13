@@ -1,6 +1,6 @@
 {
-  "name": "@ecency/render-helper",
-  "version": "2.2.21",
+  "name": "@upvu/render-helper",
+  "version": "1.0.4",
   "description": "Markdown+Html Render helper",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -21,11 +21,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ecency/ecency-render-helper"
+    "url": "git+https://github.com/blockarchivelabs/render-helper"
   },
-  "author": "Ecency <hello@ecency.com>",
+  "author": "Upvu",
   "license": "MIT",
-  "homepage": "https://github.com/ecency/ecency-render-helper",
+  "homepage": "https://github.com/blockarchivelabs/render-helper",
   "devDependencies": {
     "@types/he": "^1.1.1",
     "@types/jest": "^26.0.20",
