@@ -1,7 +1,7 @@
 import multihash from "multihashes";
 import querystring from "querystring";
 
-let proxyBase = "https://images.ecency.com";
+let proxyBase = "https://steemitimages.com";
 
 export function setProxyBase(p: string): void {
   proxyBase = p;
@@ -30,7 +30,7 @@ export function proxifyImageSrc(
   width = 0,
   height = 0,
   format = "match"
-) {
+): string {
   if (!url || typeof url !== "string") {
     return "";
   }
@@ -77,5 +77,5 @@ export function proxifyImageSrc(
   const b58url = multihash.toB58String(Buffer.from(realUrl.toString()));
 
   // return `${proxyBase}/p/${b58url}${format==='webp'?'.webp':'.png'}?${qs}`
-  return url;
+  return `https://steemitimages.com/${width}x${height}/${url}`;
 }

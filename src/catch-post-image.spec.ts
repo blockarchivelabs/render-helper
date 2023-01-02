@@ -12,7 +12,7 @@ describe("catchPostImage", () => {
     };
 
     const expected =
-      "http://www.autonews.com/apps/pbcsi.dll/storyimage/CA/20180205/MOBILITY/180209919/AR/0/AR-180209919.jpg";
+      "https://steemitimages.com/0x0/http://www.autonews.com/apps/pbcsi.dll/storyimage/CA/20180205/MOBILITY/180209919/AR/0/AR-180209919.jpg";
 
     expect(catchPostImage(input)).toBe(expected);
   });
@@ -28,7 +28,7 @@ describe("catchPostImage", () => {
     };
 
     const expected =
-      "https://images.ecency.com/0x0/https://i.imgur.com/NUt92kg.jpg";
+      "https://steemitimages.com/0x0/https://images.ecency.com/0x0/https://i.imgur.com/NUt92kg.jpg";
 
     expect(catchPostImage(input)).toBe(expected);
   });
@@ -54,7 +54,8 @@ describe("catchPostImage", () => {
       last_update: "2019-05-10T09:15:21",
     };
 
-    const expected = "https://ipfs.io/ipfs/aa.png";
+    const expected =
+      "https://steemitimages.com/0x0/https://ipfs.io/ipfs/aa.png";
 
     expect(catchPostImage(input)).toBe(expected);
   });
@@ -68,7 +69,7 @@ describe("catchPostImage", () => {
     };
 
     const expected =
-      "https://ipfs.io/ipfs/QmaG5Dpg1XGiY7EyeMCwT8Dqw4GfiAaehq3hZadongniQc";
+      "https://steemitimages.com/0x0/https://ipfs.io/ipfs/QmaG5Dpg1XGiY7EyeMCwT8Dqw4GfiAaehq3hZadongniQc";
 
     expect(catchPostImage(input)).toBe(expected);
   });
@@ -82,7 +83,8 @@ describe("catchPostImage", () => {
       last_update: "2019-05-10T09:15:21",
     };
 
-    const expected = "https://img.esteem.ws/ezrni9y9pw.jpg";
+    const expected =
+      "https://steemitimages.com/0x0/https://img.esteem.ws/ezrni9y9pw.jpg";
 
     expect(catchPostImage(input)).toBe(expected);
   });
@@ -102,7 +104,8 @@ describe("catchPostImage", () => {
   it("8- Test with not obj param", () => {
     const input =
       "<center>![ezrni9y9pw.jpg](https://img.esteem.ws/ezrni9y9pw.jpg)</center><hr>";
-    const expected = "https://img.esteem.ws/ezrni9y9pw.jpg";
+    const expected =
+      "https://steemitimages.com/0x0/https://img.esteem.ws/ezrni9y9pw.jpg";
 
     expect(catchPostImage(input)).toBe(expected);
   });
@@ -118,7 +121,7 @@ describe("catchPostImage", () => {
     };
 
     const expected =
-      "https://files.peakd.com/file/peakd-hive/aggroed/agtirkG8-image.png";
+      "https://steemitimages.com/0x0/https://files.peakd.com/file/peakd-hive/aggroed/agtirkG8-image.png";
 
     expect(catchPostImage(input as any)).toBe(expected);
   });

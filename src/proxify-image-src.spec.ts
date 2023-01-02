@@ -32,9 +32,7 @@ describe("extractPHash", () => {
     const input =
       "https://images.ecency.com/p/RGgukq5E6HBNvuPpuJoWwfXPpi5ckcLESTB3nmmnMt8YnPwgHbJegFaUzokkErqT8JVe4zPL7GD3gy6aaZQERs3MF5KAGJQ1AL4MmhLWfmceyk6XXSqWaECh1YXC7aV.png?format=match&mode=fit";
 
-    expect(extractPHash(input)).toBe(
-      "RGgukq5E6HBNvuPpuJoWwfXPpi5ckcLESTB3nmmnMt8YnPwgHbJegFaUzokkErqT8JVe4zPL7GD3gy6aaZQERs3MF5KAGJQ1AL4MmhLWfmceyk6XXSqWaECh1YXC7aV"
-    );
+    expect(extractPHash(input)).toBe(null);
   });
 
   it("2- no hash. should return null ", () => {
@@ -47,7 +45,8 @@ describe("extractPHash", () => {
 describe("Proxify image src", () => {
   it("1- should proxify image src", () => {
     const input = "https://i.imgur.com/muESb0B.png";
-    const expected = "https://i.imgur.com/muESb0B.png";
+    const expected =
+      "https://steemitimages.com/0x0/https://i.imgur.com/muESb0B.png";
 
     expect(proxifyImageSrc(input)).toBe(expected);
   });
@@ -56,7 +55,7 @@ describe("Proxify image src", () => {
     const input =
       "https://images.ecency.com/0x0/https://i.imgur.com/muESb0B.png";
     const expected =
-      "https://images.ecency.com/0x0/https://i.imgur.com/muESb0B.png";
+      "https://steemitimages.com/0x0/https://images.ecency.com/0x0/https://i.imgur.com/muESb0B.png";
 
     expect(proxifyImageSrc(input)).toBe(expected);
   });
@@ -65,7 +64,8 @@ describe("Proxify image src", () => {
     setProxyBase("https://img.esteem.app");
 
     const input = "https://i.imgur.com/muESb0B.png";
-    const expected = "https://i.imgur.com/muESb0B.png";
+    const expected =
+      "https://steemitimages.com/0x0/https://i.imgur.com/muESb0B.png";
 
     expect(proxifyImageSrc(input)).toBe(expected);
   });
@@ -85,7 +85,7 @@ describe("Proxify image src", () => {
     const input =
       "https://images.hive.blog/DQmT7UTd6JTP3bB2fXzV6tv8u4cJ6fLijy2bUxatkLChzHD/IMG_6631.JPG";
     const expected =
-      "https://images.hive.blog/DQmT7UTd6JTP3bB2fXzV6tv8u4cJ6fLijy2bUxatkLChzHD/IMG_6631.JPG";
+      "https://steemitimages.com/0x0/https://images.hive.blog/DQmT7UTd6JTP3bB2fXzV6tv8u4cJ6fLijy2bUxatkLChzHD/IMG_6631.JPG";
 
     expect(proxifyImageSrc(input)).toBe(expected);
   });
